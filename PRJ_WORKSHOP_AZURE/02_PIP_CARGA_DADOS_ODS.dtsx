@@ -12,121 +12,11 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="02_PIP_CARGA_DADOS_ODS"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{37B48084-CFD1-4E07-A1B7-422B8C60BA03}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{5CAB4449-BF19-4334-95AF-9233E1D838EE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[CONN_FLAT_FILE]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{01BDBF84-0D6E-4185-8B7A-CDEB8BC76372}"
-      DTS:ObjectName="CONN_FLAT_FILE">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1046"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Temp\WS\DADOS\00_cliente_20240428232415.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="CODIGO_CLIENTE"
-              DTS:DTSID="{D44A1D3E-C0F7-4C5A-A316-B48F6E786B01}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="100"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="NOME_CLIENTE"
-              DTS:DTSID="{46D8D01F-BBC0-4BB2-AD49-EE82B6948FD7}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="DATA_NASCIMENTO"
-              DTS:DTSID="{67656019-EFDA-4D9A-AC82-C77AD37FA730}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="IDADE_CLIENTE"
-              DTS:DTSID="{4A56DAAD-63DB-4FF1-843C-550B89CB2E4A}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="200"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="DESCRICAO_ENDERECO"
-              DTS:DTSID="{08E3F486-1559-4909-BB40-1D8A937A34A3}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="NUMERO_ENDERECO"
-              DTS:DTSID="{96F51C95-90CD-4E3A-BFE6-48902F02453B}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="100"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="NOME_CIDADE"
-              DTS:DTSID="{1D2F2250-99DB-4C12-98D5-3930E3CEC0B2}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="30"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="NUMERO_TELEFONE"
-              DTS:DTSID="{7480E453-ABD6-4C80-87B3-E9C58E58903A}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x003B_"
-              DTS:MaximumWidth="100"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="EMAIL_CLIENTE"
-              DTS:DTSID="{C37364CE-6EAA-4E62-8344-23F19FBFFD0E}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="100"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="OCUPACAO_CLIENTE"
-              DTS:DTSID="{493E6CB8-5CF3-491D-B963-933DD0CD3CA6}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CONN_SQL_SERVER_ODS]"
       DTS:CreationName="OLEDB"
@@ -1775,6 +1665,14 @@ where [refTable].[ID_CLIENTE] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="278.4,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE"
+          TopLeft="57.1666646136182,145.200002851486" />
+        <NodeLayout
+          Size="298.4,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\ESQL - ATUALIZA TABELA ODS TB_CLIENTE"
+          TopLeft="5.5,278.666670578851" />
+        <NodeLayout
           Size="329.6,41.6"
           Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\ESQL - TRUNCATE TABELA STAGING TB_CLIENTE"
           TopLeft="16.3333329028552,5.66666840924134" />
@@ -1812,10 +1710,6 @@ where [refTable].[ID_CLIENTE] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="278.4,41.6"
-          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE"
-          TopLeft="57.1666646136182,145.200002851486" />
         <EdgeLayout
           Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS.PrecedenceConstraints[Restrição 1]"
           TopLeft="196.366664613618,186.800002851486">
@@ -1850,10 +1744,6 @@ where [refTable].[ID_CLIENTE] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="298.4,41.6"
-          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\ESQL - ATUALIZA TABELA ODS TB_CLIENTE"
-          TopLeft="5.5,278.666670578851" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -2087,19 +1977,6 @@ where [refTable].[ID_CLIENTE] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING">
     <Properties>
       <Property>
@@ -2118,7 +1995,7 @@ where [refTable].[ID_CLIENTE] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2128,7 +2005,7 @@ where [refTable].[ID_CLIENTE] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2137,6 +2014,19 @@ where [refTable].[ID_CLIENTE] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

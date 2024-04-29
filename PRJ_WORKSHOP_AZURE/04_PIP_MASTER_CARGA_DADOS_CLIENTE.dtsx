@@ -1,0 +1,285 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/28/2024 11:17:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-GT679GD"
+  DTS:CreatorName="DESKTOP-GT679GD\lacer"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{AAAECBB6-075F-4F18-A2CF-68837C9E1019}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="04_PIP_MASTER_CARGA_DADOS_CLIENTE"
+  DTS:PackageType="5"
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{48641E92-8148-44A1-95FD-AAC003A5C58A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CARGA_DW]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{35F87916-0605-4EAC-A62C-2FF598119C16}"
+      DTS:ObjectName="CARGA_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Temp\WS\PRJ_WORKSHOP_AZURE\PRJ_WORKSHOP_AZURE\03_PIP_CARGA_DADOS_DW.dtsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CARGA_ODS]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{D0E85E4E-BA2D-4724-BCDC-11C5B724A8D4}"
+      DTS:ObjectName="CARGA_ODS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Temp\WS\PRJ_WORKSHOP_AZURE\PRJ_WORKSHOP_AZURE\02_PIP_CARGA_DADOS_ODS.dtsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CARGA_STAGING]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{51A1E144-881B-4B89-9617-FBF2CBC53CC4}"
+      DTS:ObjectName="CARGA_STAGING">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Temp\WS\PRJ_WORKSHOP_AZURE\PRJ_WORKSHOP_AZURE\01_PIP_CARGA_DADOS_STAGING.dtsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CONN_SQL_SERVER_TEMPDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{B8C5083E-D150-47D2-A90D-39318FFE95E0}"
+      DTS:ObjectName="CONN_SQL_SERVER_TEMPDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Retain="True"
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LOCALHOST\DBAASSISTS;Initial Catalog=tempdb;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-02_PIP_CARGA_DADOS_ODS-{BF9ED021-DB5F-448E-AAC5-B2553693061E}CONN_SQL_SERVER;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[EXTRACAO_DADOS_SQL]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{6B3D9462-F803-4BB0-8B84-2E0D8D29DC4B}"
+      DTS:ObjectName="EXTRACAO_DADOS_SQL">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Temp\WS\PRJ_WORKSHOP_AZURE\PRJ_WORKSHOP_AZURE\00_PIP_EXTRATOR_DADOS_CLIENTE.dtsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FLUXO_CARGA_DADOS_CLIENTE"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{D41C0898-996A-4595-AF40-291F2B40175A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FLUXO_CARGA_DADOS_CLIENTE">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FLUXO_CARGA_DADOS_CLIENTE\CARGA_DW"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarefa Executar Pacote"
+          DTS:DTSID="{334f23af-31b4-446d-8dac-d41fb4bc9e45}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CARGA_DW"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <Connection>{35F87916-0605-4EAC-A62C-2FF598119C16}</Connection>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FLUXO_CARGA_DADOS_CLIENTE\CARGA_ODS"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarefa Executar Pacote"
+          DTS:DTSID="{0811e526-6422-4971-8b7a-90adc0623efa}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CARGA_ODS"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <Connection>{D0E85E4E-BA2D-4724-BCDC-11C5B724A8D4}</Connection>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FLUXO_CARGA_DADOS_CLIENTE\CARGA_STAGING"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarefa Executar Pacote"
+          DTS:DTSID="{865a76a5-ec26-4f65-9181-2656830763f4}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CARGA_STAGING"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <Connection>{51A1E144-881B-4B89-9617-FBF2CBC53CC4}</Connection>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FLUXO_CARGA_DADOS_CLIENTE\EXTRACAO_DADOS_SQL"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarefa Executar Pacote"
+          DTS:DTSID="{B8BA20A3-480D-4BAA-8673-3D1260BF6F52}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EXTRACAO_DADOS_SQL"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <Connection>{6B3D9462-F803-4BB0-8B84-2E0D8D29DC4B}</Connection>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FLUXO_CARGA_DADOS_CLIENTE.PrecedenceConstraints[Restrição]"
+          DTS:CreationName=""
+          DTS:DTSID="{7B7B4690-52C7-4222-BFFF-3224BE24043C}"
+          DTS:From="Package\FLUXO_CARGA_DADOS_CLIENTE\EXTRACAO_DADOS_SQL"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição"
+          DTS:To="Package\FLUXO_CARGA_DADOS_CLIENTE\CARGA_STAGING" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FLUXO_CARGA_DADOS_CLIENTE.PrecedenceConstraints[Restrição 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{E2720783-6664-490A-B18F-3F2177ED9CC6}"
+          DTS:From="Package\FLUXO_CARGA_DADOS_CLIENTE\CARGA_STAGING"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 1"
+          DTS:To="Package\FLUXO_CARGA_DADOS_CLIENTE\CARGA_ODS" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FLUXO_CARGA_DADOS_CLIENTE.PrecedenceConstraints[Restrição 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{F2248945-BF52-472B-9D96-9B5520296202}"
+          DTS:From="Package\FLUXO_CARGA_DADOS_CLIENTE\CARGA_ODS"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 2"
+          DTS:To="Package\FLUXO_CARGA_DADOS_CLIENTE\CARGA_DW" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE\EXTRACAO_DADOS_SQL"
+          TopLeft="5.5,5.50000000000007" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE.PrecedenceConstraints[Restrição]"
+          TopLeft="107.9,47.1000000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE\CARGA_STAGING"
+          TopLeft="23.9,107.1" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE.PrecedenceConstraints[Restrição 1]"
+          TopLeft="107.9,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="144,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE\CARGA_ODS"
+          TopLeft="35.9,208.7" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE.PrecedenceConstraints[Restrição 2]"
+          TopLeft="107.9,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE\CARGA_DW"
+          TopLeft="38.7,310.3" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="216,407.2"
+          Size="272,450.4"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE"
+          TopLeft="262.99998976787,29.7666668595209" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
