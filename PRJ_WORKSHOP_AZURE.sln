@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.2092
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "PRJ_WORKSHOP_AZURE", "PRJ_WORKSHOP_AZURE\PRJ_WORKSHOP_AZURE.dtproj", "{9C93515E-90F7-4A57-B7D0-209758ADA6C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C93515E-90F7-4A57-B7D0-209758ADA6C6}.Development|Default.ActiveCfg = Development
+		{9C93515E-90F7-4A57-B7D0-209758ADA6C6}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCFB78D6-004F-4EC3-96F7-9134B911D2FA}
+	EndGlobalSection
+EndGlobal
