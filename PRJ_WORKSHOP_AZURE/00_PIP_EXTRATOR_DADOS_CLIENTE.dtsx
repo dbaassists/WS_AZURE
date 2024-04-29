@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="00_PIP_EXTRATOR_DADOS_CLIENTE"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{090EBB06-88AC-49D5-A1D9-89FA99D667A1}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{4B3C9484-B3E8-48B7-82D1-4BEB837DB097}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Temp\WS\DADOS\00_cliente_20240428230823.csv">
+          DTS:ConnectionString="C:\Temp\WS\DADOS\00_cliente_20240428232845.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -151,7 +151,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="var_arquivo">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Temp\WS\DADOS\00_cliente_20240428230823.csv</DTS:VariableValue>
+        DTS:DataType="8">C:\Temp\WS\DADOS\00_cliente_20240428232845.csv</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -162,7 +162,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="var_data">
       <DTS:VariableValue
-        DTS:DataType="20">20240428230823</DTS:VariableValue>
+        DTS:DataType="20">20240428232845</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -232,7 +232,7 @@
                           cachedDataType="i4"
                           cachedName="CODIGO_CLIENTE"
                           externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[CODIGO_CLIENTE]"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[CODIGO_CLIENTE]" />
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[CODIGO_CLIENTE]" />
                         <inputColumn
                           refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].Columns[NOME_CLIENTE]"
                           cachedCodepage="1252"
@@ -240,19 +240,19 @@
                           cachedLength="100"
                           cachedName="NOME_CLIENTE"
                           externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[NOME_CLIENTE]"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[NOME_CLIENTE]" />
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[NOME_CLIENTE]" />
                         <inputColumn
                           refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].Columns[DATA_NASCIMENTO]"
                           cachedDataType="dbDate"
                           cachedName="DATA_NASCIMENTO"
                           externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[DATA_NASCIMENTO]"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[DATA_NASCIMENTO]" />
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[DATA_NASCIMENTO]" />
                         <inputColumn
                           refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].Columns[IDADE_CLIENTE]"
                           cachedDataType="ui1"
                           cachedName="IDADE_CLIENTE"
                           externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[IDADE_CLIENTE]"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[IDADE_CLIENTE]" />
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[IDADE_CLIENTE]" />
                         <inputColumn
                           refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].Columns[DESCRICAO_ENDERECO]"
                           cachedCodepage="1252"
@@ -260,13 +260,13 @@
                           cachedLength="200"
                           cachedName="DESCRICAO_ENDERECO"
                           externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[DESCRICAO_ENDERECO]"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[DESCRICAO_ENDERECO]" />
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[DESCRICAO_ENDERECO]" />
                         <inputColumn
                           refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].Columns[NUMERO_ENDERECO]"
                           cachedDataType="i2"
                           cachedName="NUMERO_ENDERECO"
                           externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[NUMERO_ENDERECO]"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[NUMERO_ENDERECO]" />
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[NUMERO_ENDERECO]" />
                         <inputColumn
                           refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].Columns[NOME_CIDADE]"
                           cachedCodepage="1252"
@@ -274,7 +274,7 @@
                           cachedLength="100"
                           cachedName="NOME_CIDADE"
                           externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[NOME_CIDADE]"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[NOME_CIDADE]" />
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[NOME_CIDADE]" />
                         <inputColumn
                           refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].Columns[NUMERO_TELEFONE]"
                           cachedCodepage="1252"
@@ -282,7 +282,7 @@
                           cachedLength="30"
                           cachedName="NUMERO_TELEFONE"
                           externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[NUMERO_TELEFONE]"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[NUMERO_TELEFONE]" />
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[NUMERO_TELEFONE]" />
                         <inputColumn
                           refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].Columns[EMAIL_CLIENTE]"
                           cachedCodepage="1252"
@@ -290,7 +290,7 @@
                           cachedLength="100"
                           cachedName="EMAIL_CLIENTE"
                           externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[EMAIL_CLIENTE]"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[EMAIL_CLIENTE]" />
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[EMAIL_CLIENTE]" />
                         <inputColumn
                           refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].Columns[OCUPACAO_CLIENTE]"
                           cachedCodepage="1252"
@@ -298,7 +298,7 @@
                           cachedLength="100"
                           cachedName="OCUPACAO_CLIENTE"
                           externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples].ExternalColumns[OCUPACAO_CLIENTE]"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[OCUPACAO_CLIENTE]" />
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[OCUPACAO_CLIENTE]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -367,11 +367,11 @@
                   </inputs>
                 </component>
                 <component
-                  refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE"
+                  refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
                   description="Origem OLE DB"
-                  name="OLEDB_SOURCE"
+                  name="OLEDB_ORIGEM"
                   usesDispositions="true"
                   version="7">
                   <properties>
@@ -416,7 +416,7 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Connections[OleDbConnection]"
+                      refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[CONN_SQL_SERVER]"
                       connectionManagerRefId="Package.ConnectionManagers[CONN_SQL_SERVER]"
                       description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
@@ -424,162 +424,162 @@
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB]"
+                      refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB]"
                       name="Saída de Origem OLE DB">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[CODIGO_CLIENTE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[CODIGO_CLIENTE]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[CODIGO_CLIENTE]"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[CODIGO_CLIENTE]"
+                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[CODIGO_CLIENTE]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[CODIGO_CLIENTE]"
                           name="CODIGO_CLIENTE"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[NOME_CLIENTE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[NOME_CLIENTE]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CLIENTE]"
+                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CLIENTE]"
                           length="100"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[NOME_CLIENTE]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[NOME_CLIENTE]"
                           name="NOME_CLIENTE"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[DATA_NASCIMENTO]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[DATA_NASCIMENTO]"
                           dataType="dbDate"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA_NASCIMENTO]"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[DATA_NASCIMENTO]"
+                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA_NASCIMENTO]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[DATA_NASCIMENTO]"
                           name="DATA_NASCIMENTO"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[IDADE_CLIENTE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[IDADE_CLIENTE]"
                           dataType="ui1"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[IDADE_CLIENTE]"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[IDADE_CLIENTE]"
+                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[IDADE_CLIENTE]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[IDADE_CLIENTE]"
                           name="IDADE_CLIENTE"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[DESCRICAO_ENDERECO]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[DESCRICAO_ENDERECO]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[DESCRICAO_ENDERECO]"
+                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[DESCRICAO_ENDERECO]"
                           length="200"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[DESCRICAO_ENDERECO]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[DESCRICAO_ENDERECO]"
                           name="DESCRICAO_ENDERECO"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[NUMERO_ENDERECO]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[NUMERO_ENDERECO]"
                           dataType="i2"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[NUMERO_ENDERECO]"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[NUMERO_ENDERECO]"
+                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[NUMERO_ENDERECO]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[NUMERO_ENDERECO]"
                           name="NUMERO_ENDERECO"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[NOME_CIDADE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[NOME_CIDADE]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CIDADE]"
+                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CIDADE]"
                           length="100"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[NOME_CIDADE]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[NOME_CIDADE]"
                           name="NOME_CIDADE"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[NUMERO_TELEFONE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[NUMERO_TELEFONE]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[NUMERO_TELEFONE]"
+                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[NUMERO_TELEFONE]"
                           length="30"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[NUMERO_TELEFONE]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[NUMERO_TELEFONE]"
                           name="NUMERO_TELEFONE"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[EMAIL_CLIENTE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[EMAIL_CLIENTE]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[EMAIL_CLIENTE]"
+                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[EMAIL_CLIENTE]"
                           length="100"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[EMAIL_CLIENTE]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[EMAIL_CLIENTE]"
                           name="EMAIL_CLIENTE"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[OCUPACAO_CLIENTE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[OCUPACAO_CLIENTE]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[OCUPACAO_CLIENTE]"
+                          externalMetadataColumnId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[OCUPACAO_CLIENTE]"
                           length="100"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].Columns[OCUPACAO_CLIENTE]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].Columns[OCUPACAO_CLIENTE]"
                           name="OCUPACAO_CLIENTE"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[CODIGO_CLIENTE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[CODIGO_CLIENTE]"
                           dataType="i4"
                           name="CODIGO_CLIENTE" />
                         <externalMetadataColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CLIENTE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CLIENTE]"
                           codePage="1252"
                           dataType="str"
                           length="100"
                           name="NOME_CLIENTE" />
                         <externalMetadataColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA_NASCIMENTO]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA_NASCIMENTO]"
                           dataType="dbDate"
                           name="DATA_NASCIMENTO" />
                         <externalMetadataColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[IDADE_CLIENTE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[IDADE_CLIENTE]"
                           dataType="ui1"
                           name="IDADE_CLIENTE" />
                         <externalMetadataColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[DESCRICAO_ENDERECO]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[DESCRICAO_ENDERECO]"
                           codePage="1252"
                           dataType="str"
                           length="200"
                           name="DESCRICAO_ENDERECO" />
                         <externalMetadataColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[NUMERO_ENDERECO]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[NUMERO_ENDERECO]"
                           dataType="i2"
                           name="NUMERO_ENDERECO" />
                         <externalMetadataColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CIDADE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CIDADE]"
                           codePage="1252"
                           dataType="str"
                           length="100"
                           name="NOME_CIDADE" />
                         <externalMetadataColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[NUMERO_TELEFONE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[NUMERO_TELEFONE]"
                           codePage="1252"
                           dataType="str"
                           length="30"
                           name="NUMERO_TELEFONE" />
                         <externalMetadataColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[EMAIL_CLIENTE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[EMAIL_CLIENTE]"
                           codePage="1252"
                           dataType="str"
                           length="100"
                           name="EMAIL_CLIENTE" />
                         <externalMetadataColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB].ExternalColumns[OCUPACAO_CLIENTE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB].ExternalColumns[OCUPACAO_CLIENTE]"
                           codePage="1252"
                           dataType="str"
                           length="100"
@@ -587,82 +587,82 @@
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB]"
+                      refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB]"
                       isErrorOut="true"
                       name="Saída de Erro de Origem OLE DB">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[CODIGO_CLIENTE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[CODIGO_CLIENTE]"
                           dataType="i4"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[CODIGO_CLIENTE]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[CODIGO_CLIENTE]"
                           name="CODIGO_CLIENTE" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CLIENTE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CLIENTE]"
                           codePage="1252"
                           dataType="str"
                           length="100"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CLIENTE]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CLIENTE]"
                           name="NOME_CLIENTE" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA_NASCIMENTO]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA_NASCIMENTO]"
                           dataType="dbDate"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA_NASCIMENTO]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA_NASCIMENTO]"
                           name="DATA_NASCIMENTO" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[IDADE_CLIENTE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[IDADE_CLIENTE]"
                           dataType="ui1"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[IDADE_CLIENTE]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[IDADE_CLIENTE]"
                           name="IDADE_CLIENTE" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[DESCRICAO_ENDERECO]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[DESCRICAO_ENDERECO]"
                           codePage="1252"
                           dataType="str"
                           length="200"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[DESCRICAO_ENDERECO]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[DESCRICAO_ENDERECO]"
                           name="DESCRICAO_ENDERECO" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[NUMERO_ENDERECO]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[NUMERO_ENDERECO]"
                           dataType="i2"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[NUMERO_ENDERECO]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[NUMERO_ENDERECO]"
                           name="NUMERO_ENDERECO" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CIDADE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CIDADE]"
                           codePage="1252"
                           dataType="str"
                           length="100"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CIDADE]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CIDADE]"
                           name="NOME_CIDADE" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[NUMERO_TELEFONE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[NUMERO_TELEFONE]"
                           codePage="1252"
                           dataType="str"
                           length="30"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[NUMERO_TELEFONE]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[NUMERO_TELEFONE]"
                           name="NUMERO_TELEFONE" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[EMAIL_CLIENTE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[EMAIL_CLIENTE]"
                           codePage="1252"
                           dataType="str"
                           length="100"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[EMAIL_CLIENTE]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[EMAIL_CLIENTE]"
                           name="EMAIL_CLIENTE" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[OCUPACAO_CLIENTE]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[OCUPACAO_CLIENTE]"
                           codePage="1252"
                           dataType="str"
                           length="100"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[OCUPACAO_CLIENTE]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[OCUPACAO_CLIENTE]"
                           name="OCUPACAO_CLIENTE" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          lineageId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -676,7 +676,7 @@
                   refId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE.Paths[Saída de Origem OLE DB]"
                   endId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO.Inputs[Entrada de Destino de Arquivo Simples]"
                   name="Saída de Origem OLE DB"
-                  startId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE.Outputs[Saída de Origem OLE DB]" />
+                  startId="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM.Outputs[Saída de Origem OLE DB]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -699,14 +699,14 @@
         <NodeLayout
           Size="253.6,41.6"
           Id="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE"
-          TopLeft="37.999998708566,46.6000019216537" />
+          TopLeft="17.1666662030749,32.7333351447846" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="296.8,143.2"
           Size="296.8,186.4"
           Id="Package\FLUXO_EXTRACAO_DADOS_CLIENTE"
-          TopLeft="632.499974866709,151.666667872005" />
+          TopLeft="433.333316114214,155.133334566222" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -716,22 +716,22 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="164,41.6"
-          Id="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE"
-          TopLeft="547.499978244306,85.8000006818772" />
-        <NodeLayout
           Size="183.2,41.6"
           Id="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\FLAT_FILE_DESTINO"
           TopLeft="520.833312637277,255.666668698523" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM"
+          TopLeft="547.499978244306,85.8000006818772" />
         <EdgeLayout
           Id="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE.Paths[Saída de Origem OLE DB]"
-          TopLeft="629.499978244306,127.400000681877">
+          TopLeft="628.299978244306,127.400000681877">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-17.0666656070287,128.266668016646"
+              EndConnector="-15.8666656070289,128.266668016646"
               Start="0,0"
-              End="-17.0666656070287,120.766668016646">
+              End="-15.8666656070289,120.766668016646">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -742,13 +742,13 @@
                     Point2="0,64.1333340083229"
                     Point3="-4,64.1333340083229" />
                   <mssgle:LineSegment
-                    End="-13.0666656070287,64.1333340083229" />
+                    End="-11.8666656070289,64.1333340083229" />
                   <mssgle:CubicBezierSegment
-                    Point1="-13.0666656070287,64.1333340083229"
-                    Point2="-17.0666656070287,64.1333340083229"
-                    Point3="-17.0666656070287,68.1333340083229" />
+                    Point1="-11.8666656070289,64.1333340083229"
+                    Point2="-15.8666656070289,64.1333340083229"
+                    Point3="-15.8666656070289,68.1333340083229" />
                   <mssgle:LineSegment
-                    End="-17.0666656070287,120.766668016646" />
+                    End="-15.8666656070289,120.766668016646" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -761,7 +761,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_SOURCE">
+    design-time-name="Package\FLUXO_EXTRACAO_DADOS_CLIENTE\DFT_EXTRACAO_DADOS_CLIENTE\OLEDB_ORIGEM">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
