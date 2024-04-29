@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="00_PIP_EXTRATOR_DADOS_CLIENTE"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{4B3C9484-B3E8-48B7-82D1-4BEB837DB097}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{4960E3A9-D4AE-435B-BEA2-C19FEF8B44A7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Temp\WS\DADOS\00_cliente_20240428232845.csv">
+          DTS:ConnectionString="C:\Temp\WS\DADOS\00_cliente_20240429075357.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -151,7 +151,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="var_arquivo">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Temp\WS\DADOS\00_cliente_20240428232845.csv</DTS:VariableValue>
+        DTS:DataType="8">C:\Temp\WS\DADOS\00_cliente_20240429075357.csv</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -162,7 +162,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="var_data">
       <DTS:VariableValue
-        DTS:DataType="20">20240428232845</DTS:VariableValue>
+        DTS:DataType="20">20240429075357</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
