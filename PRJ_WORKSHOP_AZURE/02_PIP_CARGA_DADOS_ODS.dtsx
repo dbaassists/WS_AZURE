@@ -1,0 +1,2152 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/28/2024 11:17:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-GT679GD"
+  DTS:CreatorName="DESKTOP-GT679GD\lacer"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{1AF0DBFE-6C55-4BD1-9535-76F9418C8978}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="02_PIP_CARGA_DADOS_ODS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{37B48084-CFD1-4E07-A1B7-422B8C60BA03}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CONN_FLAT_FILE]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{01BDBF84-0D6E-4185-8B7A-CDEB8BC76372}"
+      DTS:ObjectName="CONN_FLAT_FILE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Temp\WS\DADOS\00_cliente_20240428232415.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CODIGO_CLIENTE"
+              DTS:DTSID="{D44A1D3E-C0F7-4C5A-A316-B48F6E786B01}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NOME_CLIENTE"
+              DTS:DTSID="{46D8D01F-BBC0-4BB2-AD49-EE82B6948FD7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATA_NASCIMENTO"
+              DTS:DTSID="{67656019-EFDA-4D9A-AC82-C77AD37FA730}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IDADE_CLIENTE"
+              DTS:DTSID="{4A56DAAD-63DB-4FF1-843C-550B89CB2E4A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DESCRICAO_ENDERECO"
+              DTS:DTSID="{08E3F486-1559-4909-BB40-1D8A937A34A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NUMERO_ENDERECO"
+              DTS:DTSID="{96F51C95-90CD-4E3A-BFE6-48902F02453B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NOME_CIDADE"
+              DTS:DTSID="{1D2F2250-99DB-4C12-98D5-3930E3CEC0B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NUMERO_TELEFONE"
+              DTS:DTSID="{7480E453-ABD6-4C80-87B3-E9C58E58903A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EMAIL_CLIENTE"
+              DTS:DTSID="{C37364CE-6EAA-4E62-8344-23F19FBFFD0E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OCUPACAO_CLIENTE"
+              DTS:DTSID="{493E6CB8-5CF3-491D-B963-933DD0CD3CA6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CONN_SQL_SERVER_ODS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9198c7c3-2851-474f-a931-503a1330922d}"
+      DTS:ObjectName="CONN_SQL_SERVER_ODS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Retain="True"
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LOCALHOST\DBAASSISTS;Initial Catalog=ODS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-02_PIP_CARGA_DADOS_ODS-{3C223F30-96FA-4B88-8FA7-7D98394ADB42}CONN_SQL_SERVER;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CONN_SQL_SERVER_STAGING]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3C223F30-96FA-4B88-8FA7-7D98394ADB42}"
+      DTS:ObjectName="CONN_SQL_SERVER_STAGING">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LOCALHOST\DBAASSISTS;Initial Catalog=STAGING;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-02_PIP_CARGA_DADOS_ODS-{3C223F30-96FA-4B88-8FA7-7D98394ADB42}CONN_SQL_SERVER;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CONN_SQL_SERVER_TEMPDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{a99fb3c0-53d3-4a21-88f8-81b0b47ba6da}"
+      DTS:ObjectName="CONN_SQL_SERVER_TEMPDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Retain="True"
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LOCALHOST\DBAASSISTS;Initial Catalog=tempdb;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-02_PIP_CARGA_DADOS_ODS-{3C223F30-96FA-4B88-8FA7-7D98394ADB42}CONN_SQL_SERVER;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{ED28B3A6-7162-4A94-907D-B2D6926355C0}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FLUXO_CARGA_DADOS_CLIENTE_ODS">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{C50157ED-5ECF-451E-B5EE-BB8CE636C95A}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT - CARGA TABELA ODS TB_CLIENTE"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Coluna Derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Cria novos valores de coluna aplicando expressões a colunas de entrada da transformação. Crie novas colunas ou substitua as existentes. Por exemplo, concatene os valores das colunas 'first name' e 'last name' para formar uma coluna 'full name'."
+                  name="DC - TRATAMENTO DE COLUNAS"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Inputs[Entrada de Coluna Derivada]"
+                      description="Entrada para a Transformação Coluna Derivada"
+                      name="Entrada de Coluna Derivada">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Inputs[Entrada de Coluna Derivada].Columns[NOME_CLIENTE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NOME_CLIENTE"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NOME_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Inputs[Entrada de Coluna Derivada].Columns[DESCRICAO_ENDERECO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="DESCRICAO_ENDERECO"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[DESCRICAO_ENDERECO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Inputs[Entrada de Coluna Derivada].Columns[NOME_CIDADE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NOME_CIDADE"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NOME_CIDADE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Inputs[Entrada de Coluna Derivada].Columns[EMAIL_CLIENTE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="EMAIL_CLIENTE"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[EMAIL_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Inputs[Entrada de Coluna Derivada].Columns[OCUPACAO_CLIENTE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="OCUPACAO_CLIENTE"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[OCUPACAO_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Inputs[Entrada de Coluna Derivada].Columns[IDADE_CLIENTE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="IDADE_CLIENTE"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[IDADE_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Inputs[Entrada de Coluna Derivada].Columns[DATA_NASCIMENTO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DATA_NASCIMENTO"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[DATA_NASCIMENTO]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada]"
+                      description="Saída Padrão da Transformação Coluna Derivada"
+                      exclusionGroup="1"
+                      name="Saída de Coluna Derivada"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Inputs[Entrada de Coluna Derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[NOME_CLIENTE_t]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[NOME_CLIENTE_t]"
+                          name="NOME_CLIENTE_t"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_STR,100,1252)[UPPER](#{Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NOME_CLIENTE]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,100,1252)UPPER(NOME_CLIENTE)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DESCRICAO_ENDERECO_t]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="200"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DESCRICAO_ENDERECO_t]"
+                          name="DESCRICAO_ENDERECO_t"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_STR,200,1252)[UPPER](#{Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[DESCRICAO_ENDERECO]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,200,1252)UPPER(DESCRICAO_ENDERECO)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[NOME_CIDADE_t]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[NOME_CIDADE_t]"
+                          name="NOME_CIDADE_t"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_STR,100,1252)[UPPER](#{Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NOME_CIDADE]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,100,1252)UPPER(NOME_CIDADE)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[OCUPACAO_CLIENTE_t]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[OCUPACAO_CLIENTE_t]"
+                          name="OCUPACAO_CLIENTE_t"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_STR,100,1252)[UPPER](#{Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[OCUPACAO_CLIENTE]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,100,1252)UPPER(OCUPACAO_CLIENTE)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[EMAIL_CLIENTE_t]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[EMAIL_CLIENTE_t]"
+                          name="EMAIL_CLIENTE_t"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_STR,100,1252)[LOWER](#{Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[EMAIL_CLIENTE]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,100,1252)LOWER(EMAIL_CLIENTE)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[IDADE_CLIENTE_t]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[IDADE_CLIENTE_t]"
+                          name="IDADE_CLIENTE_t"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_I4)#{Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[IDADE_CLIENTE]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_I4)IDADE_CLIENTE</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DH_INCLUSAO]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DH_INCLUSAO]"
+                          name="DH_INCLUSAO"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DH_ALTERACAO]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DH_ALTERACAO]"
+                          name="DH_ALTERACAO"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DATA_NASCIMENTO_t]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DATA_NASCIMENTO_t]"
+                          name="DATA_NASCIMENTO_t"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_DBTIMESTAMP)#{Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[DATA_NASCIMENTO]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBTIMESTAMP)DATA_NASCIMENTO</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Erro de Coluna Derivada]"
+                      description="Saída de Erro da Transformação Coluna Derivada"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Coluna Derivada"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Inputs[Entrada de Coluna Derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Coluna Derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Cria novos valores de coluna aplicando expressões a colunas de entrada da transformação. Crie novas colunas ou substitua as existentes. Por exemplo, concatene os valores das colunas 'first name' e 'last name' para formar uma coluna 'full name'."
+                  name="DC - VERIFICA DADO ALTERADO"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Inputs[Entrada de Coluna Derivada]"
+                      description="Entrada para a Transformação Coluna Derivada"
+                      name="Entrada de Coluna Derivada">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Inputs[Entrada de Coluna Derivada].Columns[NOME_CLIENTE_t]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NOME_CLIENTE_t"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[NOME_CLIENTE_t]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Inputs[Entrada de Coluna Derivada].Columns[NM_CLIENTE_o]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NM_CLIENTE_o"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa].Columns[NM_CLIENTE_o]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Coluna Derivada]"
+                      description="Saída Padrão da Transformação Coluna Derivada"
+                      exclusionGroup="1"
+                      name="Saída de Coluna Derivada"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Inputs[Entrada de Coluna Derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Coluna Derivada].Columns[var_comparacao]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="10"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Coluna Derivada].Columns[var_comparacao]"
+                          name="var_comparacao"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_STR,10,1252)(#{Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[NOME_CLIENTE_t]} != #{Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa].Columns[NM_CLIENTE_o]} ? "DIFERENTE" : "IGUAL")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,10,1252)(NOME_CLIENTE_t != NM_CLIENTE_o ? "DIFERENTE" : "IGUAL")</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Erro de Coluna Derivada]"
+                      description="Saída de Erro da Transformação Coluna Derivada"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Coluna Derivada"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Inputs[Entrada de Coluna Derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Divisão Condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Encaminha colunas de dados para saídas diferentes, dependendo do conteúdo dos dados. Use condições (expressões do SSIS) para especificar quais linhas são encaminhadas. Por exemplo, separe os registros que precisam ser limpos daqueles que estão prontos para serem carregados ou encaminhe somente um subconjunto de registros."
+                  name="DVC - FILTRA DADO ALTERADO"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO.Inputs[Entrada de Divisão Condicional]"
+                      description="Entrada para a Transformação Divisão Condicional"
+                      name="Entrada de Divisão Condicional">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO.Inputs[Entrada de Divisão Condicional].Columns[var_comparacao]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="var_comparacao"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Coluna Derivada].Columns[var_comparacao]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[cond_REG_DIFERENTE]"
+                      description="Saída 1 da Transformação Divisão Condicional"
+                      errorOrTruncationOperation="Computação"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="cond_REG_DIFERENTE"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO.Inputs[Entrada de Divisão Condicional]"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
+                          name="Expression">#{Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Coluna Derivada].Columns[var_comparacao]} == "DIFERENTE"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
+                          expressionType="Notify"
+                          name="FriendlyExpression">var_comparacao == "DIFERENTE"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[Saída Padrão de Divisão Condicional]"
+                      description="Saída Padrão da Transformação Divisão Condicional"
+                      exclusionGroup="1"
+                      name="Saída Padrão de Divisão Condicional"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO.Inputs[Entrada de Divisão Condicional]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[Saída de Erro de Divisão Condicional]"
+                      description="Saída de Erro da Transformação Divisão Condicional"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Divisão Condicional"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO.Inputs[Entrada de Divisão Condicional]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
+                  description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
+                  name="LKUP - VERIFICA SE O DADO EXISTE"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a instrução SQL que gera a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [ods].[TB_CLIENTE]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [ods].[TB_CLIENTE]) [refTable]
+where [refTable].[ID_CLIENTE] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de cache da tabela de pesquisa."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica se os metadados de referência em um formato XML devem ser referenciados."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ID_CLIENTE" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NM_CLIENTE" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DT_NASCIMENTO" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NU_IDADE_CLIENTE" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DS_ENDERECO" dataType="DT_STR" length="200" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="NU_ENDERECO" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="NM_CIDADE" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="NU_TELEFONE" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DS_EMAIL_CLIENTE" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DS_OCUPACAO_CLIENTE" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DH_INCLUSAO" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DH_ALTERACAO" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
+                      name="ParameterMap">#{Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[CODIGO_CLIENTE]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CONN_SQL_SERVER_ODS]"
+                      connectionManagerRefId="Package.ConnectionManagers[CONN_SQL_SERVER_ODS]"
+                      description="O gerenciador de conexões usado para acessar dados de pesquisa."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Inputs[Entrada de Pesquisa]"
+                      name="Entrada de Pesquisa">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Inputs[Entrada de Pesquisa].Columns[CODIGO_CLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="CODIGO_CLIENTE"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[CODIGO_CLIENTE]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência que uma coluna une."
+                              name="JoinToReferenceColumn">ID_CLIENTE</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa]"
+                      errorOrTruncationOperation="Pesquisa"
+                      exclusionGroup="1"
+                      name="Saída de Correspondência de Pesquisa"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa].Columns[NM_CLIENTE_o]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Copiar Coluna"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa].Columns[NM_CLIENTE_o]"
+                          name="NM_CLIENTE_o"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn">NM_CLIENTE</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída Sem Correspondência de Pesquisa]"
+                      description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
+                      exclusionGroup="1"
+                      name="Saída Sem Correspondência de Pesquisa"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Inputs[Entrada de Pesquisa]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Erro de Pesquisa]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Pesquisa"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="OLEDB_DESTINO_ODS"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[ods].[TB_CLIENTE]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CONN_SQL_SERVER_ODS]"
+                      connectionManagerRefId="Package.ConnectionManagers[CONN_SQL_SERVER_ODS]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].Columns[DH_INCLUSAO]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DH_INCLUSAO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_INCLUSAO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DH_INCLUSAO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].Columns[DH_ALTERACAO]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DH_ALTERACAO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_ALTERACAO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DH_ALTERACAO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].Columns[CODIGO_CLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="CODIGO_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[CODIGO_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].Columns[NOME_CLIENTE_t]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NOME_CLIENTE_t"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[NOME_CLIENTE_t]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].Columns[IDADE_CLIENTE_t]"
+                          cachedDataType="i4"
+                          cachedName="IDADE_CLIENTE_t"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_IDADE_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[IDADE_CLIENTE_t]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].Columns[DESCRICAO_ENDERECO_t]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="DESCRICAO_ENDERECO_t"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_ENDERECO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DESCRICAO_ENDERECO_t]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].Columns[NUMERO_ENDERECO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="NUMERO_ENDERECO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_ENDERECO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NUMERO_ENDERECO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].Columns[NOME_CIDADE_t]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NOME_CIDADE_t"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CIDADE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[NOME_CIDADE_t]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].Columns[NUMERO_TELEFONE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="NUMERO_TELEFONE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_TELEFONE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NUMERO_TELEFONE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].Columns[EMAIL_CLIENTE_t]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="EMAIL_CLIENTE_t"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_EMAIL_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[EMAIL_CLIENTE_t]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].Columns[OCUPACAO_CLIENTE_t]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="OCUPACAO_CLIENTE_t"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_OCUPACAO_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[OCUPACAO_CLIENTE_t]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].Columns[DATA_NASCIMENTO_t]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DATA_NASCIMENTO_t"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DT_NASCIMENTO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DATA_NASCIMENTO_t]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CLIENTE]"
+                          dataType="i4"
+                          name="ID_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DT_NASCIMENTO]"
+                          dataType="dbTimeStamp"
+                          name="DT_NASCIMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_IDADE_CLIENTE]"
+                          dataType="i4"
+                          name="NU_IDADE_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="DS_ENDERECO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="NU_ENDERECO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CIDADE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_CIDADE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_TELEFONE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="NU_TELEFONE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_EMAIL_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_EMAIL_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_OCUPACAO_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_OCUPACAO_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_INCLUSAO]"
+                          dataType="dbTimeStamp"
+                          name="DH_INCLUSAO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_ALTERACAO]"
+                          dataType="dbTimeStamp"
+                          name="DH_ALTERACAO" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="OLEDB_DESTINO_TEMPDB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[##TMP_CLIENTE]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CONN_SQL_SERVER_TEMPDB]"
+                      connectionManagerRefId="Package.ConnectionManagers[CONN_SQL_SERVER_TEMPDB]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].Columns[DH_INCLUSAO]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DH_INCLUSAO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_INCLUSAO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DH_INCLUSAO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].Columns[DH_ALTERACAO]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DH_ALTERACAO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_ALTERACAO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DH_ALTERACAO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].Columns[CODIGO_CLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="CODIGO_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[CODIGO_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].Columns[NOME_CLIENTE_t]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NOME_CLIENTE_t"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[NOME_CLIENTE_t]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].Columns[IDADE_CLIENTE_t]"
+                          cachedDataType="i4"
+                          cachedName="IDADE_CLIENTE_t"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_IDADE_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[IDADE_CLIENTE_t]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].Columns[DESCRICAO_ENDERECO_t]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="DESCRICAO_ENDERECO_t"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_ENDERECO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DESCRICAO_ENDERECO_t]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].Columns[NUMERO_ENDERECO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="NUMERO_ENDERECO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_ENDERECO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NUMERO_ENDERECO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].Columns[NOME_CIDADE_t]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NOME_CIDADE_t"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CIDADE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[NOME_CIDADE_t]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].Columns[NUMERO_TELEFONE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="NUMERO_TELEFONE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_TELEFONE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NUMERO_TELEFONE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].Columns[EMAIL_CLIENTE_t]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="EMAIL_CLIENTE_t"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_EMAIL_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[EMAIL_CLIENTE_t]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].Columns[OCUPACAO_CLIENTE_t]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="OCUPACAO_CLIENTE_t"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_OCUPACAO_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[OCUPACAO_CLIENTE_t]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].Columns[DATA_NASCIMENTO_t]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DATA_NASCIMENTO_t"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DT_NASCIMENTO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada].Columns[DATA_NASCIMENTO_t]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CLIENTE]"
+                          dataType="i4"
+                          name="ID_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DT_NASCIMENTO]"
+                          dataType="dbTimeStamp"
+                          name="DT_NASCIMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_IDADE_CLIENTE]"
+                          dataType="i4"
+                          name="NU_IDADE_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="DS_ENDERECO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="NU_ENDERECO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CIDADE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_CIDADE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_TELEFONE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="NU_TELEFONE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_EMAIL_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_EMAIL_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_OCUPACAO_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_OCUPACAO_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_INCLUSAO]"
+                          dataType="dbTimeStamp"
+                          name="DH_INCLUSAO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_ALTERACAO]"
+                          dataType="dbTimeStamp"
+                          name="DH_ALTERACAO" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="OLEDB_ORIGEM_STAGING"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[staging].[TB_CLIENTE]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CONN_SQL_SERVER_STAGING]"
+                      connectionManagerRefId="Package.ConnectionManagers[CONN_SQL_SERVER_STAGING]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB]"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[CODIGO_CLIENTE]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[CODIGO_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[CODIGO_CLIENTE]"
+                          name="CODIGO_CLIENTE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NOME_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CLIENTE]"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NOME_CLIENTE]"
+                          name="NOME_CLIENTE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[DATA_NASCIMENTO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA_NASCIMENTO]"
+                          length="50"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[DATA_NASCIMENTO]"
+                          name="DATA_NASCIMENTO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[IDADE_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[IDADE_CLIENTE]"
+                          length="50"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[IDADE_CLIENTE]"
+                          name="IDADE_CLIENTE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[DESCRICAO_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[DESCRICAO_ENDERECO]"
+                          length="200"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[DESCRICAO_ENDERECO]"
+                          name="DESCRICAO_ENDERECO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NUMERO_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[NUMERO_ENDERECO]"
+                          length="50"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NUMERO_ENDERECO]"
+                          name="NUMERO_ENDERECO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NOME_CIDADE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CIDADE]"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NOME_CIDADE]"
+                          name="NOME_CIDADE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NUMERO_TELEFONE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[NUMERO_TELEFONE]"
+                          length="30"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[NUMERO_TELEFONE]"
+                          name="NUMERO_TELEFONE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[EMAIL_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[EMAIL_CLIENTE]"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[EMAIL_CLIENTE]"
+                          name="EMAIL_CLIENTE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[OCUPACAO_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[OCUPACAO_CLIENTE]"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].Columns[OCUPACAO_CLIENTE]"
+                          name="OCUPACAO_CLIENTE"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[CODIGO_CLIENTE]"
+                          dataType="i4"
+                          name="CODIGO_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NOME_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA_NASCIMENTO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DATA_NASCIMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[IDADE_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="IDADE_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[DESCRICAO_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="DESCRICAO_ENDERECO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[NUMERO_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="NUMERO_ENDERECO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CIDADE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NOME_CIDADE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[NUMERO_TELEFONE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="NUMERO_TELEFONE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[EMAIL_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="EMAIL_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB].ExternalColumns[OCUPACAO_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="OCUPACAO_CLIENTE" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[CODIGO_CLIENTE]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[CODIGO_CLIENTE]"
+                          name="CODIGO_CLIENTE" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CLIENTE]"
+                          name="NOME_CLIENTE" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA_NASCIMENTO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA_NASCIMENTO]"
+                          name="DATA_NASCIMENTO" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[IDADE_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[IDADE_CLIENTE]"
+                          name="IDADE_CLIENTE" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[DESCRICAO_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[DESCRICAO_ENDERECO]"
+                          name="DESCRICAO_ENDERECO" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[NUMERO_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[NUMERO_ENDERECO]"
+                          name="NUMERO_ENDERECO" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CIDADE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CIDADE]"
+                          name="NOME_CIDADE" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[NUMERO_TELEFONE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[NUMERO_TELEFONE]"
+                          name="NUMERO_TELEFONE" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[EMAIL_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[EMAIL_CLIENTE]"
+                          name="EMAIL_CLIENTE" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[OCUPACAO_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[OCUPACAO_CLIENTE]"
+                          name="OCUPACAO_CLIENTE" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE.Paths[cond_REG_DIFERENTE]"
+                  endId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB.Inputs[Entrada de Destino OLE DB]"
+                  name="cond_REG_DIFERENTE"
+                  startId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[cond_REG_DIFERENTE]" />
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE.Paths[EXISTE O REGISTRO]"
+                  endId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Inputs[Entrada de Coluna Derivada]"
+                  name="EXISTE O REGISTRO"
+                  startId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa]" />
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE.Paths[NAO EXISTE O REGISTRO]"
+                  endId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS.Inputs[Entrada de Destino OLE DB]"
+                  name="NAO EXISTE O REGISTRO"
+                  startId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída Sem Correspondência de Pesquisa]" />
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE.Paths[Saída de Coluna Derivada]"
+                  endId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Inputs[Entrada de Pesquisa]"
+                  name="Saída de Coluna Derivada"
+                  startId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Outputs[Saída de Coluna Derivada]" />
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE.Paths[Saída de Coluna Derivada1]"
+                  endId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO.Inputs[Entrada de Divisão Condicional]"
+                  name="Saída de Coluna Derivada"
+                  startId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Coluna Derivada]" />
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE.Paths[Saída de Origem OLE DB]"
+                  endId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS.Inputs[Entrada de Coluna Derivada]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING.Outputs[Saída de Origem OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\ESQL - ATUALIZA TABELA ODS TB_CLIENTE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{3c3e3c3c-2f29-4b01-bde5-5dfd2509023b}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ESQL - ATUALIZA TABELA ODS TB_CLIENTE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9198c7c3-2851-474f-a931-503a1330922d}"
+              SQLTask:SqlStatementSource="UPDATE DESTINO&#xA;&#xA;SET &#xA;&#xA;DESTINO.[NM_CLIENTE] = ORIGEM.[NM_CLIENTE] &#xA;,DESTINO.[DT_NASCIMENTO] = ORIGEM.[DT_NASCIMENTO]&#xA;,DESTINO.[NU_IDADE_CLIENTE] = ORIGEM.[NU_IDADE_CLIENTE]&#xA;,DESTINO.[DS_ENDERECO] = ORIGEM.[DS_ENDERECO]&#xA;,DESTINO.[NU_ENDERECO] = ORIGEM.[NU_ENDERECO]&#xA;,DESTINO.[NM_CIDADE] = ORIGEM.[NM_CIDADE]&#xA;,DESTINO.[NU_TELEFONE] = ORIGEM.[NU_TELEFONE]&#xA;,DESTINO.[DS_EMAIL_CLIENTE] = ORIGEM.[DS_EMAIL_CLIENTE]&#xA;,DESTINO.[DS_OCUPACAO_CLIENTE] = ORIGEM.[DS_OCUPACAO_CLIENTE]&#xA;,DESTINO.[DH_ALTERACAO] = GETDATE()&#xA;&#xA;FROM ods.TB_CLIENTE DESTINO&#xA;&#xA;INNER JOIN ##TMP_CLIENTE ORIGEM&#xA;&#xA;ON ORIGEM.ID_CLIENTE = DESTINO.ID_CLIENTE&#xA;&#xA;WHERE DESTINO.ID_CLIENTE = ORIGEM.ID_CLIENTE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\ESQL - TRUNCATE TABELA STAGING TB_CLIENTE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{434BAF61-E8D8-4D7A-88DD-F437ED74141E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ESQL - TRUNCATE TABELA STAGING TB_CLIENTE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{a99fb3c0-53d3-4a21-88f8-81b0b47ba6da}"
+              SQLTask:SqlStatementSource="IF OBJECT_ID('tempdb..##TMP_CLIENTE') IS NOT NULL&#xA;DROP TABLE ##TMP_CLIENTE&#xA;GO&#xA;CREATE TABLE ##TMP_CLIENTE(&#xA;&#x9;[ID_CLIENTE] [int] NOT NULL,&#xA;&#x9;[NM_CLIENTE] [varchar](100) NOT NULL,&#xA;&#x9;[DT_NASCIMENTO] [datetime] NOT NULL,&#xA;&#x9;[NU_IDADE_CLIENTE] [int] NOT NULL,&#xA;&#x9;[DS_ENDERECO] [varchar](200) NOT NULL,&#xA;&#x9;[NU_ENDERECO] [varchar](50) NOT NULL,&#xA;&#x9;[NM_CIDADE] [varchar](100) NOT NULL,&#xA;&#x9;[NU_TELEFONE] [varchar](30) NOT NULL,&#xA;&#x9;[DS_EMAIL_CLIENTE] [varchar](100) NOT NULL,&#xA;&#x9;[DS_OCUPACAO_CLIENTE] [varchar](100) NOT NULL,&#xA;&#x9;[DH_INCLUSAO] [datetime] NOT NULL,&#xA;&#x9;[DH_ALTERACAO] [datetime] NOT NULL&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS.PrecedenceConstraints[Restrição]"
+          DTS:CreationName=""
+          DTS:DTSID="{1810E73D-568E-48C1-9777-C06D2F1F55D8}"
+          DTS:From="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\ESQL - TRUNCATE TABELA STAGING TB_CLIENTE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição"
+          DTS:To="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS.PrecedenceConstraints[Restrição 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{CB736028-4962-420B-9C72-584255720EFB}"
+          DTS:From="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 1"
+          DTS:To="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\ESQL - ATUALIZA TABELA ODS TB_CLIENTE" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="329.6,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\ESQL - TRUNCATE TABELA STAGING TB_CLIENTE"
+          TopLeft="16.3333329028552,5.66666840924134" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS.PrecedenceConstraints[Restrição]"
+          TopLeft="181.133332902855,47.2666684092413">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.233331710763,97.9333344422448"
+              Start="0,0"
+              End="15.233331710763,90.4333344422448">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.9666672211224" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.9666672211224"
+                    Point2="0,48.9666672211224"
+                    Point3="4,48.9666672211224" />
+                  <mssgle:LineSegment
+                    End="11.233331710763,48.9666672211224" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.233331710763,48.9666672211224"
+                    Point2="15.233331710763,48.9666672211224"
+                    Point3="15.233331710763,52.9666672211224" />
+                  <mssgle:LineSegment
+                    End="15.233331710763,90.4333344422448" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="278.4,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE"
+          TopLeft="57.1666646136182,145.200002851486" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS.PrecedenceConstraints[Restrição 1]"
+          TopLeft="196.366664613618,186.800002851486">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-41.6666646136182,91.8666677273644"
+              Start="0,0"
+              End="-41.6666646136182,84.3666677273644">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.9333338636822" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.9333338636822"
+                    Point2="0,45.9333338636822"
+                    Point3="-4,45.9333338636822" />
+                  <mssgle:LineSegment
+                    End="-37.6666646136182,45.9333338636822" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-37.6666646136182,45.9333338636822"
+                    Point2="-41.6666646136182,45.9333338636822"
+                    Point3="-41.6666646136182,49.9333338636822" />
+                  <mssgle:LineSegment
+                    End="-41.6666646136182,84.3666677273644" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="298.4,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\ESQL - ATUALIZA TABELA ODS TB_CLIENTE"
+          TopLeft="5.5,278.666670578851" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="351.2,375.2"
+          Size="351.2,418.4"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS"
+          TopLeft="553.333311345843,116.133334256278" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS"
+          TopLeft="172.166660043929,490.566668099299" />
+        <NodeLayout
+          Size="214.4,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING"
+          TopLeft="450.933325750298,88.7000006612142" />
+        <NodeLayout
+          Size="244,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - TRATAMENTO DE COLUNAS"
+          TopLeft="436.133325750298,190.300000661214" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE.Paths[Saída de Origem OLE DB]"
+          TopLeft="558.133325750298,130.300000661214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="262.4,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE"
+          TopLeft="426.933325750298,291.900000661215" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE.Paths[Saída de Coluna Derivada]"
+          TopLeft="558.133325750298,231.900000661214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE.Paths[NAO EXISTE O REGISTRO]"
+          TopLeft="515.733325750298,333.500000661215">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-246.76666570637,157.066667438084"
+              Start="0,0"
+              End="-246.76666570637,149.566667438084">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.3978184931903" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59.3978184931903"
+                    Point2="0,63.3978184931903"
+                    Point3="-4,63.3978184931903" />
+                  <mssgle:LineSegment
+                    End="-242.76666570637,63.3978184931903" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-242.76666570637,63.3978184931903"
+                    Point2="-246.76666570637,63.3978184931903"
+                    Point3="-246.76666570637,67.3978184931902" />
+                  <mssgle:LineSegment
+                    End="-246.76666570637,149.566667438084" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-212.977356290685,68.3978184931902,179.188046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="214.4,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB"
+          TopLeft="759.266646831567,584.700002148947" />
+        <NodeLayout
+          Size="242.4,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DC - VERIFICA DADO ALTERADO"
+          TopLeft="718.333304789333,363.133336219258" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE.Paths[EXISTE O REGISTRO]"
+          TopLeft="600.533325750298,333.500000661215">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="238.999979039034,29.6333355580433"
+              Start="0,0"
+              End="238.999979039034,22.1333355580433">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.96109180706476" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.96109180706476"
+                    Point2="0,11.9610918070648"
+                    Point3="4,11.9610918070648" />
+                  <mssgle:LineSegment
+                    End="234.999979039034,11.9610918070648" />
+                  <mssgle:CubicBezierSegment
+                    Point1="234.999979039034,11.9610918070648"
+                    Point2="238.999979039034,11.9610918070648"
+                    Point3="238.999979039034,15.9610918070648" />
+                  <mssgle:LineSegment
+                    End="238.999979039034,22.1333355580433" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="34.1259660820172,16.9610918070648,170.748046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="236.8,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\DVC - FILTRA DADO ALTERADO"
+          TopLeft="821.666634016568,475.333336239921" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE.Paths[Saída de Coluna Derivada1]"
+          TopLeft="839.533304789333,404.733336219258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.533329227236,70.6000000206629"
+              Start="0,0"
+              End="100.533329227236,63.1000000206629">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.3000000103314" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.3000000103314"
+                    Point2="0,35.3000000103314"
+                    Point3="4,35.3000000103314" />
+                  <mssgle:LineSegment
+                    End="96.5333292272355,35.3000000103314" />
+                  <mssgle:CubicBezierSegment
+                    Point1="96.5333292272355,35.3000000103314"
+                    Point2="100.533329227236,35.3000000103314"
+                    Point3="100.533329227236,39.3000000103314" />
+                  <mssgle:LineSegment
+                    End="100.533329227236,63.1000000206629" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE.Paths[cond_REG_DIFERENTE]"
+          TopLeft="940.066634016568,516.933336239921">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-73.5999871850012,67.7666659090264"
+              Start="0,0"
+              End="-73.5999871850012,60.2666659090264">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.8833329545132" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.8833329545132"
+                    Point2="0,33.8833329545132"
+                    Point3="-4,33.8833329545132" />
+                  <mssgle:LineSegment
+                    End="-69.5999871850012,33.8833329545132" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-69.5999871850012,33.8833329545132"
+                    Point2="-73.5999871850012,33.8833329545132"
+                    Point3="-73.5999871850012,37.8833329545132" />
+                  <mssgle:LineSegment
+                    End="-73.5999871850012,60.2666659090264" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-88.4075521862506,38.8833329545132,103.2151171875,11.0625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_ODS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_ORIGEM_STAGING">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\LKUP - VERIFICA SE O DADO EXISTE">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[ods].[TB_CLIENTE]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FLUXO_CARGA_DADOS_CLIENTE_ODS\DFT - CARGA TABELA ODS TB_CLIENTE\OLEDB_DESTINO_TEMPDB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
