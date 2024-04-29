@@ -1,0 +1,2616 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/28/2024 11:17:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-GT679GD"
+  DTS:CreatorName="DESKTOP-GT679GD\lacer"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{8B939E49-F1F8-4F0F-B329-EC13BB2D3F61}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="03_PIP_CARGA_DADOS_DW"
+  DTS:PackageType="5"
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{ABBE5FC0-6A2C-438C-A91A-19437559E26D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CONN_SQL_SERVER_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{71B78301-F2DF-4E1C-AC86-7332DAD5EF9E}"
+      DTS:ObjectName="CONN_SQL_SERVER_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LOCALHOST\DBAASSISTS;Initial Catalog=DW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-02_PIP_CARGA_DADOS_ODS-{71B78301-F2DF-4E1C-AC86-7332DAD5EF9E}CONN_SQL_SERVER;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CONN_SQL_SERVER_ODS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{93548045-2AF0-43FC-B6E1-DBC66BD3DA65}"
+      DTS:ObjectName="CONN_SQL_SERVER_ODS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Retain="True"
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LOCALHOST\DBAASSISTS;Initial Catalog=ODS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-02_PIP_CARGA_DADOS_ODS-{71B78301-F2DF-4E1C-AC86-7332DAD5EF9E}CONN_SQL_SERVER;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CONN_SQL_SERVER_TEMPDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{10627046-4DB4-4A06-A352-5D00E70D7A6D}"
+      DTS:ObjectName="CONN_SQL_SERVER_TEMPDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Retain="True"
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LOCALHOST\DBAASSISTS;Initial Catalog=tempdb;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-02_PIP_CARGA_DADOS_ODS-{71B78301-F2DF-4E1C-AC86-7332DAD5EF9E}CONN_SQL_SERVER;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DelayValidation="True"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{6E50770E-A436-4345-99A1-4FEEF7B2445B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FLUXO_CARGA_DADOS_DIM_CLIENTE">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{A4E4641D-C901-43C4-B52A-ACFD9C5BE74C}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT - CARGA TABELA DW DIMENSAO CLIENTE"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Coluna Derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Cria novos valores de coluna aplicando expressões a colunas de entrada da transformação. Crie novas colunas ou substitua as existentes. Por exemplo, concatene os valores das colunas 'first name' e 'last name' para formar uma coluna 'full name'."
+                  name="DC - CRIA DATA FIM VIGENCIA"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Inputs[Entrada de Coluna Derivada]"
+                      description="Entrada para a Transformação Coluna Derivada"
+                      name="Entrada de Coluna Derivada">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Coluna Derivada]"
+                      description="Saída Padrão da Transformação Coluna Derivada"
+                      exclusionGroup="1"
+                      name="Saída de Coluna Derivada"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Inputs[Entrada de Coluna Derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Coluna Derivada].Columns[DH_FIM_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Coluna Derivada].Columns[DH_FIM_VIGENCIA]"
+                          name="DH_FIM_VIGENCIA"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Coluna Derivada].Columns[DH_ALTERACAO]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Coluna Derivada].Columns[DH_ALTERACAO]"
+                          name="DH_ALTERACAO"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Coluna Derivada].Columns[DH_CADASTRO]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Coluna Derivada].Columns[DH_CADASTRO]"
+                          name="DH_CADASTRO"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Erro de Coluna Derivada]"
+                      description="Saída de Erro da Transformação Coluna Derivada"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Coluna Derivada"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Inputs[Entrada de Coluna Derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Coluna Derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Cria novos valores de coluna aplicando expressões a colunas de entrada da transformação. Crie novas colunas ou substitua as existentes. Por exemplo, concatene os valores das colunas 'first name' e 'last name' para formar uma coluna 'full name'."
+                  name="DC - CRIA DATAS"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Inputs[Entrada de Coluna Derivada]"
+                      description="Entrada para a Transformação Coluna Derivada"
+                      name="Entrada de Coluna Derivada">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Coluna Derivada]"
+                      description="Saída Padrão da Transformação Coluna Derivada"
+                      exclusionGroup="1"
+                      name="Saída de Coluna Derivada"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Inputs[Entrada de Coluna Derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Coluna Derivada].Columns[DH_INICIO_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Coluna Derivada].Columns[DH_INICIO_VIGENCIA]"
+                          name="DH_INICIO_VIGENCIA"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Coluna Derivada].Columns[DH_ALTERACAO]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Coluna Derivada].Columns[DH_ALTERACAO]"
+                          name="DH_ALTERACAO"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Coluna Derivada].Columns[DH_CADASTRO]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Coluna Derivada].Columns[DH_CADASTRO]"
+                          name="DH_CADASTRO"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Erro de Coluna Derivada]"
+                      description="Saída de Erro da Transformação Coluna Derivada"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Coluna Derivada"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Inputs[Entrada de Coluna Derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Coluna Derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Cria novos valores de coluna aplicando expressões a colunas de entrada da transformação. Crie novas colunas ou substitua as existentes. Por exemplo, concatene os valores das colunas 'first name' e 'last name' para formar uma coluna 'full name'."
+                  name="DC - VERIFICA DADO ALTERADO"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Inputs[Entrada de Coluna Derivada]"
+                      description="Entrada para a Transformação Coluna Derivada"
+                      name="Entrada de Coluna Derivada">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Inputs[Entrada de Coluna Derivada].Columns[NM_CLIENTE_o]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NM_CLIENTE_o"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa].Columns[NM_CLIENTE_o]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Inputs[Entrada de Coluna Derivada].Columns[NM_CLIENTE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NM_CLIENTE"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NM_CLIENTE]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Coluna Derivada]"
+                      description="Saída Padrão da Transformação Coluna Derivada"
+                      exclusionGroup="1"
+                      name="Saída de Coluna Derivada"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Inputs[Entrada de Coluna Derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Coluna Derivada].Columns[var_comparacao]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="10"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Coluna Derivada].Columns[var_comparacao]"
+                          name="var_comparacao"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_STR,10,1252)(#{Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NM_CLIENTE]} != #{Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa].Columns[NM_CLIENTE_o]} ? "DIFERENTE" : "IGUAL")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,10,1252)(NM_CLIENTE != NM_CLIENTE_o ? "DIFERENTE" : "IGUAL")</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Erro de Coluna Derivada]"
+                      description="Saída de Erro da Transformação Coluna Derivada"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Coluna Derivada"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Inputs[Entrada de Coluna Derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Divisão Condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Encaminha colunas de dados para saídas diferentes, dependendo do conteúdo dos dados. Use condições (expressões do SSIS) para especificar quais linhas são encaminhadas. Por exemplo, separe os registros que precisam ser limpos daqueles que estão prontos para serem carregados ou encaminhe somente um subconjunto de registros."
+                  name="DVC - FILTRA DADO ALTERADO"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Inputs[Entrada de Divisão Condicional]"
+                      description="Entrada para a Transformação Divisão Condicional"
+                      name="Entrada de Divisão Condicional">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Inputs[Entrada de Divisão Condicional].Columns[var_comparacao]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="var_comparacao"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Coluna Derivada].Columns[var_comparacao]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[cond_REG_DIFERENTE]"
+                      description="Saída 1 da Transformação Divisão Condicional"
+                      errorOrTruncationOperation="Computação"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="cond_REG_DIFERENTE"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Inputs[Entrada de Divisão Condicional]"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
+                          name="Expression">#{Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Coluna Derivada].Columns[var_comparacao]} == "DIFERENTE"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
+                          expressionType="Notify"
+                          name="FriendlyExpression">var_comparacao == "DIFERENTE"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[cond_REG_IGUAL]"
+                      description="Saída 2 da Transformação Divisão Condicional"
+                      errorOrTruncationOperation="Computação"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="cond_REG_IGUAL"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Inputs[Entrada de Divisão Condicional]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
+                          name="Expression">#{Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Coluna Derivada].Columns[var_comparacao]} == "IGUAL"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
+                          expressionType="Notify"
+                          name="FriendlyExpression">var_comparacao == "IGUAL"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
+                          name="EvaluationOrder">1</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[Saída Padrão de Divisão Condicional]"
+                      description="Saída Padrão da Transformação Divisão Condicional"
+                      exclusionGroup="1"
+                      name="Saída Padrão de Divisão Condicional"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Inputs[Entrada de Divisão Condicional]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[Saída de Erro de Divisão Condicional]"
+                      description="Saída de Erro da Transformação Divisão Condicional"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Divisão Condicional"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Inputs[Entrada de Divisão Condicional]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
+                  description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
+                  name="LKUP - VERIFICA SE O DADO EXISTE"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a instrução SQL que gera a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * 
+FROM dw.Dim_Cliente
+WHERE DH_FIM_VIGENCIA IS NULL</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT * 
+FROM dw.Dim_Cliente
+WHERE DH_FIM_VIGENCIA IS NULL) [refTable]
+where [refTable].[CD_CLIENTE] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de cache da tabela de pesquisa."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica se os metadados de referência em um formato XML devem ser referenciados."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ID_DIM_CLIENTE" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CD_CLIENTE" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NM_CLIENTE" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DT_NASCIMENTO" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NU_IDADE_CLIENTE" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DS_ENDERECO" dataType="DT_STR" length="200" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="NU_ENDERECO" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NM_CIDADE" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="NU_TELEFONE" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DS_EMAIL_CLIENTE" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DS_OCUPACAO_CLIENTE" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DH_INICIO_VIGENCIA" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DH_FIM_VIGENCIA" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DH_CADASTRO" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DH_ALTERACAO" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
+                      name="ParameterMap">#{Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[ID_CLIENTE]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CONN_SQL_SERVER_DW]"
+                      connectionManagerRefId="Package.ConnectionManagers[CONN_SQL_SERVER_DW]"
+                      description="O gerenciador de conexões usado para acessar dados de pesquisa."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Inputs[Entrada de Pesquisa]"
+                      name="Entrada de Pesquisa">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Inputs[Entrada de Pesquisa].Columns[ID_CLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="ID_CLIENTE"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[ID_CLIENTE]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência que uma coluna une."
+                              name="JoinToReferenceColumn">CD_CLIENTE</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa]"
+                      errorOrTruncationOperation="Pesquisa"
+                      exclusionGroup="1"
+                      name="Saída de Correspondência de Pesquisa"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa].Columns[NM_CLIENTE_o]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Copiar Coluna"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa].Columns[NM_CLIENTE_o]"
+                          name="NM_CLIENTE_o"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn">NM_CLIENTE</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa].Columns[ID_DIM_CLIENTE]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copiar Coluna"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa].Columns[ID_DIM_CLIENTE]"
+                          name="ID_DIM_CLIENTE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn">ID_DIM_CLIENTE</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída Sem Correspondência de Pesquisa]"
+                      description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
+                      exclusionGroup="1"
+                      name="Saída Sem Correspondência de Pesquisa"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Inputs[Entrada de Pesquisa]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Erro de Pesquisa]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Pesquisa"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\MC - ABERTURA DE FLUXO"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Distribui cada linha de entrada em cada linha em uma ou mais saídas. Por exemplo, ramifique seu fluxo de dados para criar uma cópia de dados de forma que alguns valores possam ser mascarados antes do compartilhamento com parceiros externos."
+                  name="MC - ABERTURA DE FLUXO">
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\MC - ABERTURA DE FLUXO.Inputs[Multicast Entrada 1]"
+                      name="Multicast Entrada 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\MC - ABERTURA DE FLUXO.Outputs[Multicast Saída 1]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Saída 1"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\MC - ABERTURA DE FLUXO.Inputs[Multicast Entrada 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\MC - ABERTURA DE FLUXO.Outputs[1 de Saída Multicast]"
+                      deleteOutputOnPathDetached="true"
+                      name="1 de Saída Multicast"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\MC - ABERTURA DE FLUXO.Inputs[Multicast Entrada 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\MC - ABERTURA DE FLUXO.Outputs[2 de Saída Multicast]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="2 de Saída Multicast"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\MC - ABERTURA DE FLUXO.Inputs[Multicast Entrada 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="OLEDB_DESTINO_DW"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dw].[Dim_Cliente]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CONN_SQL_SERVER_DW]"
+                      connectionManagerRefId="Package.ConnectionManagers[CONN_SQL_SERVER_DW]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].Columns[NM_CLIENTE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NM_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NM_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].Columns[DT_NASCIMENTO]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DT_NASCIMENTO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DT_NASCIMENTO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DT_NASCIMENTO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].Columns[NU_IDADE_CLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="NU_IDADE_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_IDADE_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NU_IDADE_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].Columns[DS_ENDERECO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="DS_ENDERECO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_ENDERECO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DS_ENDERECO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].Columns[NU_ENDERECO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="NU_ENDERECO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_ENDERECO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NU_ENDERECO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].Columns[NM_CIDADE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NM_CIDADE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CIDADE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NM_CIDADE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].Columns[NU_TELEFONE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="NU_TELEFONE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_TELEFONE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NU_TELEFONE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].Columns[DS_EMAIL_CLIENTE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="DS_EMAIL_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_EMAIL_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DS_EMAIL_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].Columns[DS_OCUPACAO_CLIENTE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="DS_OCUPACAO_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_OCUPACAO_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DS_OCUPACAO_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].Columns[DH_INICIO_VIGENCIA]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DH_INICIO_VIGENCIA"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_INICIO_VIGENCIA]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Coluna Derivada].Columns[DH_INICIO_VIGENCIA]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].Columns[DH_CADASTRO]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DH_CADASTRO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_CADASTRO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Coluna Derivada].Columns[DH_CADASTRO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].Columns[ID_CLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="ID_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[CD_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[ID_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].Columns[DH_ALTERACAO]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DH_ALTERACAO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_ALTERACAO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Coluna Derivada].Columns[DH_ALTERACAO]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DT_NASCIMENTO]"
+                          dataType="dbDate"
+                          name="DT_NASCIMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_IDADE_CLIENTE]"
+                          dataType="i4"
+                          name="NU_IDADE_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="DS_ENDERECO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_ENDERECO]"
+                          dataType="i4"
+                          name="NU_ENDERECO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CIDADE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_CIDADE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_TELEFONE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="NU_TELEFONE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_EMAIL_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_EMAIL_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_OCUPACAO_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_OCUPACAO_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_ALTERACAO]"
+                          dataType="dbTimeStamp"
+                          name="DH_ALTERACAO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_DIM_CLIENTE]"
+                          dataType="i4"
+                          name="ID_DIM_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[CD_CLIENTE]"
+                          dataType="i4"
+                          name="CD_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_INICIO_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          name="DH_INICIO_VIGENCIA" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_FIM_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          name="DH_FIM_VIGENCIA" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_CADASTRO]"
+                          dataType="dbTimeStamp"
+                          name="DH_CADASTRO" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="OLEDB_DESTINO_INSERE_NOVA_VERSAO"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dw].[Dim_Cliente]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CONN_SQL_SERVER_DW]"
+                      connectionManagerRefId="Package.ConnectionManagers[CONN_SQL_SERVER_DW]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].Columns[NM_CLIENTE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NM_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NM_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].Columns[DT_NASCIMENTO]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DT_NASCIMENTO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[DT_NASCIMENTO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DT_NASCIMENTO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].Columns[NU_IDADE_CLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="NU_IDADE_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_IDADE_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NU_IDADE_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].Columns[DS_ENDERECO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="DS_ENDERECO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_ENDERECO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DS_ENDERECO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].Columns[NU_ENDERECO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="NU_ENDERECO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_ENDERECO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NU_ENDERECO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].Columns[NM_CIDADE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NM_CIDADE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CIDADE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NM_CIDADE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].Columns[NU_TELEFONE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="NU_TELEFONE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_TELEFONE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NU_TELEFONE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].Columns[DS_EMAIL_CLIENTE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="DS_EMAIL_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_EMAIL_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DS_EMAIL_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].Columns[DS_OCUPACAO_CLIENTE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="DS_OCUPACAO_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_OCUPACAO_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DS_OCUPACAO_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].Columns[ID_CLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="ID_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[CD_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[ID_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].Columns[DH_FIM_VIGENCIA]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DH_FIM_VIGENCIA"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_INICIO_VIGENCIA]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Coluna Derivada].Columns[DH_FIM_VIGENCIA]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].Columns[DH_ALTERACAO]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DH_ALTERACAO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_ALTERACAO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Coluna Derivada].Columns[DH_ALTERACAO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].Columns[DH_CADASTRO]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DH_CADASTRO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_CADASTRO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Coluna Derivada].Columns[DH_CADASTRO]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[DT_NASCIMENTO]"
+                          dataType="dbDate"
+                          name="DT_NASCIMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_IDADE_CLIENTE]"
+                          dataType="i4"
+                          name="NU_IDADE_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="DS_ENDERECO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_ENDERECO]"
+                          dataType="i4"
+                          name="NU_ENDERECO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CIDADE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_CIDADE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_TELEFONE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="NU_TELEFONE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_EMAIL_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_EMAIL_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_OCUPACAO_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_OCUPACAO_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_DIM_CLIENTE]"
+                          dataType="i4"
+                          name="ID_DIM_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[CD_CLIENTE]"
+                          dataType="i4"
+                          name="CD_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_INICIO_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          name="DH_INICIO_VIGENCIA" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_FIM_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          name="DH_FIM_VIGENCIA" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_CADASTRO]"
+                          dataType="dbTimeStamp"
+                          name="DH_CADASTRO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_ALTERACAO]"
+                          dataType="dbTimeStamp"
+                          name="DH_ALTERACAO" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="OLEDB_DESTINO_TEMPDB_ATUALIZA"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[##tmp_dim_cliente]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CONN_SQL_SERVER_TEMPDB]"
+                      connectionManagerRefId="Package.ConnectionManagers[CONN_SQL_SERVER_TEMPDB]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].Columns[NM_CLIENTE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NM_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NM_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].Columns[DT_NASCIMENTO]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DT_NASCIMENTO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[DT_NASCIMENTO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DT_NASCIMENTO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].Columns[NU_IDADE_CLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="NU_IDADE_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_IDADE_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NU_IDADE_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].Columns[DS_ENDERECO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="DS_ENDERECO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_ENDERECO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DS_ENDERECO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].Columns[NU_ENDERECO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="NU_ENDERECO"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_ENDERECO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NU_ENDERECO]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].Columns[NM_CIDADE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NM_CIDADE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CIDADE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NM_CIDADE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].Columns[NU_TELEFONE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="NU_TELEFONE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_TELEFONE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NU_TELEFONE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].Columns[DS_EMAIL_CLIENTE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="DS_EMAIL_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_EMAIL_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DS_EMAIL_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].Columns[DS_OCUPACAO_CLIENTE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="DS_OCUPACAO_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_OCUPACAO_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DS_OCUPACAO_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].Columns[ID_DIM_CLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="ID_DIM_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_DIM_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa].Columns[ID_DIM_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].Columns[ID_CLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="ID_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[CD_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[ID_CLIENTE]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[DT_NASCIMENTO]"
+                          dataType="dbDate"
+                          name="DT_NASCIMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_IDADE_CLIENTE]"
+                          dataType="i4"
+                          name="NU_IDADE_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="DS_ENDERECO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_ENDERECO]"
+                          dataType="i4"
+                          name="NU_ENDERECO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[NM_CIDADE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_CIDADE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[NU_TELEFONE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="NU_TELEFONE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_EMAIL_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_EMAIL_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[DS_OCUPACAO_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_OCUPACAO_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_DIM_CLIENTE]"
+                          dataType="i4"
+                          name="ID_DIM_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB].ExternalColumns[CD_CLIENTE]"
+                          dataType="i4"
+                          name="CD_CLIENTE" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="OLEDB_DESTINO_TEMPDB_VERSIONA"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[##tmp_dim_cliente_vigencia]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CONN_SQL_SERVER_TEMPDB]"
+                      connectionManagerRefId="Package.ConnectionManagers[CONN_SQL_SERVER_TEMPDB]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA.Inputs[Entrada de Destino OLE DB].Columns[ID_DIM_CLIENTE]"
+                          cachedDataType="i4"
+                          cachedName="ID_DIM_CLIENTE"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_DIM_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa].Columns[ID_DIM_CLIENTE]" />
+                        <inputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA.Inputs[Entrada de Destino OLE DB].Columns[DH_FIM_VIGENCIA]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DH_FIM_VIGENCIA"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_FIM_VIGENCIA]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Coluna Derivada].Columns[DH_FIM_VIGENCIA]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_DIM_CLIENTE]"
+                          dataType="i4"
+                          name="ID_DIM_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA.Inputs[Entrada de Destino OLE DB].ExternalColumns[DH_FIM_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          name="DH_FIM_VIGENCIA" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="OLEDB_ORIGEM_ODS"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[ods].[TB_CLIENTE]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CONN_SQL_SERVER_ODS]"
+                      connectionManagerRefId="Package.ConnectionManagers[CONN_SQL_SERVER_ODS]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB]"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[ID_CLIENTE]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[ID_CLIENTE]"
+                          name="ID_CLIENTE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NM_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[NM_CLIENTE]"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NM_CLIENTE]"
+                          name="NM_CLIENTE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DT_NASCIMENTO]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[DT_NASCIMENTO]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DT_NASCIMENTO]"
+                          name="DT_NASCIMENTO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NU_IDADE_CLIENTE]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[NU_IDADE_CLIENTE]"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NU_IDADE_CLIENTE]"
+                          name="NU_IDADE_CLIENTE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DS_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[DS_ENDERECO]"
+                          length="200"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DS_ENDERECO]"
+                          name="DS_ENDERECO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NU_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[NU_ENDERECO]"
+                          length="50"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NU_ENDERECO]"
+                          name="NU_ENDERECO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NM_CIDADE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[NM_CIDADE]"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NM_CIDADE]"
+                          name="NM_CIDADE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NU_TELEFONE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[NU_TELEFONE]"
+                          length="30"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[NU_TELEFONE]"
+                          name="NU_TELEFONE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DS_EMAIL_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[DS_EMAIL_CLIENTE]"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DS_EMAIL_CLIENTE]"
+                          name="DS_EMAIL_CLIENTE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DS_OCUPACAO_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[DS_OCUPACAO_CLIENTE]"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].Columns[DS_OCUPACAO_CLIENTE]"
+                          name="DS_OCUPACAO_CLIENTE"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_CLIENTE]"
+                          dataType="i4"
+                          name="ID_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[NM_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[DT_NASCIMENTO]"
+                          dataType="dbTimeStamp"
+                          name="DT_NASCIMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[NU_IDADE_CLIENTE]"
+                          dataType="i4"
+                          name="NU_IDADE_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[DS_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="DS_ENDERECO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[NU_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="NU_ENDERECO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[NM_CIDADE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_CIDADE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[NU_TELEFONE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="NU_TELEFONE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[DS_EMAIL_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_EMAIL_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[DS_OCUPACAO_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_OCUPACAO_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[DH_INCLUSAO]"
+                          dataType="dbTimeStamp"
+                          name="DH_INCLUSAO" />
+                        <externalMetadataColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB].ExternalColumns[DH_ALTERACAO]"
+                          dataType="dbTimeStamp"
+                          name="DH_ALTERACAO" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_CLIENTE]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_CLIENTE]"
+                          name="ID_CLIENTE" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[NM_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[NM_CLIENTE]"
+                          name="NM_CLIENTE" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[DT_NASCIMENTO]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[DT_NASCIMENTO]"
+                          name="DT_NASCIMENTO" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[NU_IDADE_CLIENTE]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[NU_IDADE_CLIENTE]"
+                          name="NU_IDADE_CLIENTE" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[DS_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[DS_ENDERECO]"
+                          name="DS_ENDERECO" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[NU_ENDERECO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[NU_ENDERECO]"
+                          name="NU_ENDERECO" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[NM_CIDADE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[NM_CIDADE]"
+                          name="NM_CIDADE" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[NU_TELEFONE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[NU_TELEFONE]"
+                          name="NU_TELEFONE" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[DS_EMAIL_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[DS_EMAIL_CLIENTE]"
+                          name="DS_EMAIL_CLIENTE" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[DS_OCUPACAO_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[DS_OCUPACAO_CLIENTE]"
+                          name="DS_OCUPACAO_CLIENTE" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[1 de Saída Multicast]"
+                  endId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA.Inputs[Entrada de Destino OLE DB]"
+                  name="1 de Saída Multicast"
+                  startId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\MC - ABERTURA DE FLUXO.Outputs[1 de Saída Multicast]" />
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[cond_REG_DIFERENTE]"
+                  endId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\MC - ABERTURA DE FLUXO.Inputs[Multicast Entrada 1]"
+                  name="cond_REG_DIFERENTE"
+                  startId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[cond_REG_DIFERENTE]" />
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[cond_REG_IGUAL]"
+                  endId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA.Inputs[Entrada de Destino OLE DB]"
+                  name="cond_REG_IGUAL"
+                  startId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Outputs[cond_REG_IGUAL]" />
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[Multicast Saída 1]"
+                  endId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO.Inputs[Entrada de Destino OLE DB]"
+                  name="Multicast Saída 1"
+                  startId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\MC - ABERTURA DE FLUXO.Outputs[Multicast Saída 1]" />
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[Saída de Coluna Derivada]"
+                  endId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO.Inputs[Entrada de Divisão Condicional]"
+                  name="Saída de Coluna Derivada"
+                  startId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Outputs[Saída de Coluna Derivada]" />
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[Saída de Coluna Derivada1]"
+                  endId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO.Inputs[Entrada de Coluna Derivada]"
+                  name="Saída de Coluna Derivada"
+                  startId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Outputs[Saída de Coluna Derivada]" />
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[Saída de Coluna Derivada2]"
+                  endId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Coluna Derivada"
+                  startId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Outputs[Saída de Coluna Derivada]" />
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[Saída de Correspondência de Pesquisa]"
+                  endId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA.Inputs[Entrada de Coluna Derivada]"
+                  name="Saída de Correspondência de Pesquisa"
+                  startId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída de Correspondência de Pesquisa]" />
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[Saída de Origem OLE DB]"
+                  endId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Inputs[Entrada de Pesquisa]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS.Outputs[Saída de Origem OLE DB]" />
+                <path
+                  refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[Saída Sem Correspondência de Pesquisa]"
+                  endId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS.Inputs[Entrada de Coluna Derivada]"
+                  name="Saída Sem Correspondência de Pesquisa"
+                  startId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE.Outputs[Saída Sem Correspondência de Pesquisa]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\ESQL - ATUALIZA DIMENSAO CLIENTE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{164B2676-A263-4A25-8C88-75354490A186}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ESQL - ATUALIZA DIMENSAO CLIENTE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{71B78301-F2DF-4E1C-AC86-7332DAD5EF9E}"
+              SQLTask:SqlStatementSource="UPDATE ORIGEM&#xA;SET ORIGEM.[DH_FIM_VIGENCIA] = DESTINO.[DH_FIM_VIGENCIA]&#xA;FROM [dw].[Dim_Cliente] ORIGEM &#xA;&#xA;INNER JOIN ##tmp_dim_cliente_vigencia DESTINO&#xA;ON ORIGEM.[ID_DIM_CLIENTE] = DESTINO.[ID_DIM_CLIENTE]&#xA;&#xA;&#xA;UPDATE ORIGEM &#xA;&#xA;SET&#xA;&#xA;ORIGEM.[CD_CLIENTE] = DESTINO.[CD_CLIENTE]&#xA;,ORIGEM.[NM_CLIENTE] = DESTINO.[NM_CLIENTE]&#xA;,ORIGEM.[DT_NASCIMENTO] = DESTINO.[DT_NASCIMENTO]&#xA;,ORIGEM.[NU_IDADE_CLIENTE] = DESTINO.[NU_IDADE_CLIENTE]&#xA;,ORIGEM.[DS_ENDERECO] = DESTINO.[DS_ENDERECO]&#xA;,ORIGEM.[NU_ENDERECO] = DESTINO.[NU_ENDERECO]&#xA;,ORIGEM.[NM_CIDADE] = DESTINO.[NM_CIDADE]&#xA;,ORIGEM.[NU_TELEFONE] = DESTINO.[NU_TELEFONE]&#xA;,ORIGEM.[DS_EMAIL_CLIENTE] = DESTINO.[DS_EMAIL_CLIENTE]&#xA;,ORIGEM.[DS_OCUPACAO_CLIENTE] = DESTINO.[DS_OCUPACAO_CLIENTE]&#xA;,ORIGEM.[DH_ALTERACAO] = GETDATE()&#xA;&#xA;FROM dw.Dim_Cliente ORIGEM&#xA;&#xA;INNER JOIN ##tmp_dim_cliente DESTINO&#xA;&#xA;ON ORIGEM.[ID_DIM_CLIENTE] = DESTINO.[ID_DIM_CLIENTE]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\ESQL - CRIARCAO TABELAS AUXILIARES"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{4178199D-9123-4AB3-81E0-FB90395EAC9D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ESQL - CRIARCAO TABELAS AUXILIARES"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{10627046-4DB4-4A06-A352-5D00E70D7A6D}"
+              SQLTask:SqlStatementSource="&#xA;IF OBJECT_ID('tempdb..##tmp_dim_cliente_vigencia') IS NOT NULL&#xA;DROP TABLE ##tmp_dim_cliente_vigencia&#xA;GO&#xA;CREATE TABLE ##tmp_dim_cliente_vigencia&#xA;(&#xA;[ID_DIM_CLIENTE] [int]&#xA;,[DH_FIM_VIGENCIA] DATETIME NOT NULL&#xA;)&#xA;&#xA;&#xA;IF OBJECT_ID('tempdb..##tmp_dim_cliente') IS NOT NULL&#xA;DROP TABLE ##tmp_dim_cliente&#xA;GO&#xA;CREATE TABLE ##tmp_dim_cliente(&#xA;&#x9;[ID_DIM_CLIENTE] [int]NOT NULL,&#xA;&#x9;[CD_CLIENTE] [int] NOT NULL,&#xA;&#x9;[NM_CLIENTE] [varchar](100) NOT NULL,&#xA;&#x9;[DT_NASCIMENTO] [date] NOT NULL,&#xA;&#x9;[NU_IDADE_CLIENTE] [int] NOT NULL,&#xA;&#x9;[DS_ENDERECO] [varchar](200) NOT NULL,&#xA;&#x9;[NU_ENDERECO] [int] NOT NULL,&#xA;&#x9;[NM_CIDADE] [varchar](100) NOT NULL,&#xA;&#x9;[NU_TELEFONE] [varchar](30) NOT NULL,&#xA;&#x9;[DS_EMAIL_CLIENTE] [varchar](100) NOT NULL,&#xA;&#x9;[DS_OCUPACAO_CLIENTE] [varchar](100) NOT NULL&#xA;)&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE.PrecedenceConstraints[Restrição]"
+          DTS:CreationName=""
+          DTS:DTSID="{E8B02B76-9097-4683-822D-65D7823EEA17}"
+          DTS:From="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\ESQL - CRIARCAO TABELAS AUXILIARES"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição"
+          DTS:To="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE.PrecedenceConstraints[Restrição 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{AA1211B1-5D8D-4A15-803F-DAC0339B1732}"
+          DTS:From="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 1"
+          DTS:To="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\ESQL - ATUALIZA DIMENSAO CLIENTE" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="312,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE"
+          TopLeft="21.3333327041736,146.933336198595" />
+        <NodeLayout
+          Size="269.6,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\ESQL - ATUALIZA DIMENSAO CLIENTE"
+          TopLeft="5.5,278.666670578851" />
+        <NodeLayout
+          Size="284,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\ESQL - CRIARCAO TABELAS AUXILIARES"
+          TopLeft="16.3333329028552,5.66666840924134" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE.PrecedenceConstraints[Restrição]"
+          TopLeft="158.333332902855,47.2666684092413">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.9999998013184,99.6666677893532"
+              Start="0,0"
+              End="18.9999998013184,92.1666677893532">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.8333338946766" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.8333338946766"
+                    Point2="0,49.8333338946766"
+                    Point3="4,49.8333338946766" />
+                  <mssgle:LineSegment
+                    End="14.9999998013184,49.8333338946766" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.9999998013184,49.8333338946766"
+                    Point2="18.9999998013184,49.8333338946766"
+                    Point3="18.9999998013184,53.8333338946766" />
+                  <mssgle:LineSegment
+                    End="18.9999998013184,92.1666677893532" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE.PrecedenceConstraints[Restrição 1]"
+          TopLeft="177.333332704174,188.533336198595">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-37.0333327041736,90.1333343802565"
+              Start="0,0"
+              End="-37.0333327041736,82.6333343802565">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.0666671901282" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.0666671901282"
+                    Point2="0,45.0666671901282"
+                    Point3="-4,45.0666671901282" />
+                  <mssgle:LineSegment
+                    End="-33.0333327041736,45.0666671901282" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-33.0333327041736,45.0666671901282"
+                    Point2="-37.0333327041736,45.0666671901282"
+                    Point3="-37.0333327041736,49.0666671901282" />
+                  <mssgle:LineSegment
+                    End="-37.0333327041736,82.6333343802565" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="351.2,375.2"
+          Size="351.2,418.4"
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE"
+          TopLeft="553.333311345843,116.133334256278" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS"
+          TopLeft="588.9,5.49999999999995" />
+        <NodeLayout
+          Size="262.4,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE"
+          TopLeft="552.5,107.1" />
+        <NodeLayout
+          Size="236.8,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DVC - FILTRA DADO ALTERADO"
+          TopLeft="289.3,411.9" />
+        <NodeLayout
+          Size="294.4,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO"
+          TopLeft="5.50000000000006,615.100000000001" />
+        <NodeLayout
+          Size="242.4,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - VERIFICA DADO ALTERADO"
+          TopLeft="286.5,310.3" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW"
+          TopLeft="949.299985694886,318.966666735543" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[Saída de Coluna Derivada]"
+          TopLeft="407.7,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[Saída de Origem OLE DB]"
+          TopLeft="683.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="215.2,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\MC - ABERTURA DE FLUXO"
+          TopLeft="93.1000000000001,513.5" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[cond_REG_DIFERENTE]"
+          TopLeft="369.566666666667,453.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-168.866666666667,60.0000000000003"
+              Start="0,0"
+              End="-168.866666666667,52.5000000000003">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2416107382551" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2416107382551"
+                    Point2="0,24.2416107382551"
+                    Point3="-4,24.2416107382551" />
+                  <mssgle:LineSegment
+                    End="-164.866666666667,24.2416107382551" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-164.866666666667,24.2416107382551"
+                    Point2="-168.866666666667,24.2416107382551"
+                    Point3="-168.866666666667,28.2416107382551" />
+                  <mssgle:LineSegment
+                    End="-168.866666666667,52.5000000000003" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-136.040891927083,29.2416107382551,103.2151171875,11.0625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[Multicast Saída 1]"
+          TopLeft="166.166666666667,555.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.4666666666667,60.0000000000001"
+              Start="0,0"
+              End="-13.4666666666667,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2656826568266" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2656826568266"
+                    Point2="0,24.2656826568266"
+                    Point3="-4,24.2656826568266" />
+                  <mssgle:LineSegment
+                    End="-9.46666666666667,24.2656826568266" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.46666666666667,24.2656826568266"
+                    Point2="-13.4666666666667,24.2656826568266"
+                    Point3="-13.4666666666667,28.2656826568266" />
+                  <mssgle:LineSegment
+                    End="-13.4666666666667,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="274.4,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA"
+          TopLeft="360.5,615.1" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[1 de Saída Multicast]"
+          TopLeft="235.233333333333,555.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="262.466666666667,60"
+              Start="0,0"
+              End="262.466666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2656826568266" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2656826568266"
+                    Point2="0,24.2656826568266"
+                    Point3="4,24.2656826568266" />
+                  <mssgle:LineSegment
+                    End="258.466666666667,24.2656826568266" />
+                  <mssgle:CubicBezierSegment
+                    Point1="258.466666666667,24.2656826568266"
+                    Point2="262.466666666667,24.2656826568266"
+                    Point3="262.466666666667,28.2656826568266" />
+                  <mssgle:LineSegment
+                    End="262.466666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="231.2,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATA FIM VIGENCIA"
+          TopLeft="309.1,208.7" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[Saída de Correspondência de Pesquisa]"
+          TopLeft="641.3,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-216.6,60"
+              Start="0,0"
+              End="-216.6,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2181818181818" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2181818181818"
+                    Point2="0,24.2181818181818"
+                    Point3="-4,24.2181818181818" />
+                  <mssgle:LineSegment
+                    End="-212.6,24.2181818181818" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-212.6,24.2181818181818"
+                    Point2="-216.6,24.2181818181818"
+                    Point3="-216.6,28.2181818181818" />
+                  <mssgle:LineSegment
+                    End="-216.6,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-193.6740234375,29.2181818181818,170.748046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[Saída de Coluna Derivada1]"
+          TopLeft="424.7,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17,60.0000000000001"
+              Start="0,0"
+              End="-17,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.0000000000001"
+                    Point2="0,30.0000000000001"
+                    Point3="-4,30.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-13,30.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13,30.0000000000001"
+                    Point2="-17,30.0000000000001"
+                    Point3="-17,34.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-17,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\DC - CRIA DATAS"
+          TopLeft="961.299985694886,217.366666735543" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[Saída Sem Correspondência de Pesquisa]"
+          TopLeft="726.1,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="317.599985694886,68.6666667355432"
+              Start="0,0"
+              End="317.599985694886,61.1666667355432">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.7163636641647" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.7163636641647"
+                    Point2="0,27.7163636641647"
+                    Point3="4,27.7163636641647" />
+                  <mssgle:LineSegment
+                    End="313.599985694886,27.7163636641647" />
+                  <mssgle:CubicBezierSegment
+                    Point1="313.599985694886,27.7163636641647"
+                    Point2="317.599985694886,27.7163636641647"
+                    Point3="317.599985694886,31.7163636641647" />
+                  <mssgle:LineSegment
+                    End="317.599985694886,61.1666667355432" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="69.205969409943,32.7163636641647,179.188046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[Saída de Coluna Derivada2]"
+          TopLeft="1043.69998569489,258.966666735543">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="270.4,41.6"
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_ATUALIZA"
+          TopLeft="715.83331571685,516.100000020663" />
+        <EdgeLayout
+          Id="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE.Paths[cond_REG_IGUAL]"
+          TopLeft="445.833333333333,453.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="405.199982383517,62.6000000206631"
+              Start="0,0"
+              End="405.199982383517,55.1000000206631">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.2920805452612" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.2920805452612"
+                    Point2="0,25.2920805452612"
+                    Point3="4,25.2920805452612" />
+                  <mssgle:LineSegment
+                    End="401.199982383517,25.2920805452612" />
+                  <mssgle:CubicBezierSegment
+                    Point1="401.199982383517,25.2920805452612"
+                    Point2="405.199982383517,25.2920805452612"
+                    Point3="405.199982383517,29.2920805452612" />
+                  <mssgle:LineSegment
+                    End="405.199982383517,55.1000000206631" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="162.508448223009,30.2920805452612,80.1830859375,11.0625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_ORIGEM_ODS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\LKUP - VERIFICA SE O DADO EXISTE">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_INSERE_NOVA_VERSAO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FLUXO_CARGA_DADOS_DIM_CLIENTE\DFT - CARGA TABELA DW DIMENSAO CLIENTE\OLEDB_DESTINO_TEMPDB_VERSIONA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
